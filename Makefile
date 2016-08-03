@@ -1,5 +1,5 @@
 INSTALLDIR-ARCH = $(DESTDIR)/usr/lib/libreoffice/share/config/
-INSTALLDIR-AUR = $(DESTDIR)/opt/libreoffice5.1/share/config/
+INSTALLDIR-AUR = $(DESTDIR)/opt/libreoffice5.2/share/config/
 RM = rm -rf
 
 all:
