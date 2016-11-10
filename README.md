@@ -2,14 +2,11 @@
   <img src="https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-libreoffice-theme/master/preview.png" alt="preview"/>
 </p>
 
-# Install
-**Archlinux (AUR)**:
+# Install / Update
 ```
-yaourt -S papirus-libreoffice-theme
+wget -O - https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-libreoffice-theme/master/install-papirus.sh | bash
 ```
-**Ubuntu 14.04/16.04**:
-```
-sudo add-apt-repository ppa:varlesh-l/papirus-pack
-sudo apt-get update
-sudo apt-get install libreoffice-style-papirus 
-```
+**Depends:**
+- wget
+- unzip
+- libreoffice
