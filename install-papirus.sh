@@ -10,6 +10,4 @@ echo "Installing ..."
 sudo ln -s /usr/share/libreoffice/share/config/images_papirus.zip /usr/lib/libreoffice/share/config/images_papirus.zip
 sudo ln -s /usr/share/libreoffice/share/config/images_papirus_dark.zip /usr/lib/libreoffice/share/config/images_papirus_dark.zip
 sudo chmod -R 755 /usr/share/libreoffice/share/config/images_papiru*
-echo "Delete cache ..."
-rm install-papirus.sh
 echo "Done!"
