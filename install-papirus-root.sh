@@ -1,4 +1,4 @@
-#/bin/bash
+#!/usr/bin/env bash
 echo "Papirus LibreOffice themes"
 sleep 5
 echo "Delete old Papirus icon theme ..."
