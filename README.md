@@ -4,14 +4,14 @@
 
 # Install / Update
 ```
-wget -O - https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-libreoffice-theme/master/install-papirus-root.sh | bash
+wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-libreoffice-theme/master/install-papirus-root.sh | sh
 ```
 **Depends:**
 - wget
-- unzip
+- tar
 - libreoffice
 
 # Remove
 ```
-wget -O - https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-libreoffice-theme/master/remove-papirus.sh | bash
+wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-libreoffice-theme/master/remove-papirus.sh | sh
 ```
