@@ -35,6 +35,7 @@ echo "=> Deleting old $gh_desc ..."
 sudo rm -rf "/usr/share/libreoffice/share/config/images_papirus.zip" \
   "/usr/share/libreoffice/share/config/images_papirus_dark.zip"
 echo "=> Installing ..."
+sudo mkdir -p "/usr/share/libreoffice/share/config/"
 sudo cp --no-preserve=mode,ownership -r \
   "$temp_dir/$gh_repo-master/images_papirus.zip" \
   "$temp_dir/$gh_repo-master/images_papirus_dark.zip" \
