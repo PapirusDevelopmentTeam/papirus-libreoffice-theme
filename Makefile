@@ -1,17 +1,38 @@
-INSTALLDIR-ARCH = $(DESTDIR)/usr/lib/libreoffice/share/config/
-INSTALLDIR-AUR = $(DESTDIR)/opt/libreoffice5.2/share/config/
-RM = rm -rf
+all: install
 
-all:
+install:
+	mkdir -p $(DESTDIR)/usr/share/libreoffice/share/config
+	cp --no-preserve=mode,ownership -r \
+		images_papirus.zip \
+		images_papirus_dark.zip \
+		$(DESTDIR)/usr/share/libreoffice/share/config
+	mkdir -p $(DESTDIR)/usr/lib/libreoffice/share/config
+	ln -s $(DESTDIR)/usr/share/libreoffice/share/config/images_papirus.zip \
+		$(DESTDIR)/usr/lib/libreoffice/share/config/images_papirus.zip
+	ln -s $(DESTDIR)/usr/share/libreoffice/share/config/images_papirus_dark.zip \
+		$(DESTDIR)/usr/lib/libreoffice/share/config/images_papirus_dark.zip
 
-install: local
+uninstall:
+	-rm -f $(DESTDIR)/usr/share/libreoffice/share/config/images_papirus.zip
+	-rm -f $(DESTDIR)/usr/share/libreoffice/share/config/images_papirus_dark.zip
+	-rm -f $(DESTDIR)/usr/lib/libreoffice/share/config/images_papirus.zip
+	-rm -f $(DESTDIR)/usr/lib/libreoffice/share/config/images_papirus_dark.zip
 
-clear:
-	$(RM) $(INSTALLDIR-ARCH)images_papirus{,_dark}.zip
-	$(RM) $(INSTALLDIR-AUR)images_papirus{,_dark}.zip
-local:
+_get_version:
+	$(eval DATE := $(shell git log -1 --format=%cd --date=format:%Y.%m.%d))
+	$(eval COUNT := $(shell git rev-list --all --count))
+	$(eval VERSION := $(DATE)-r$(COUNT))
 
-	find images_papirus{,_dark}.zip -type f -exec install -Dm644 '{}' "$(INSTALLDIR-ARCH){}" \;
-	find images_papirus{,_dark}.zip -type f -exec install -Dm644 '{}' "$(INSTALLDIR-AUR){}" \;
+push:
+	git push origin
 
-uninstall: clear
+release: _get_version push
+	git tag -f $(VERSION)
+	git push origin --tags
+
+undo_release: _get_version
+	-git tag -d $(VERSION)
+	-git push --delete origin $(VERSION)
+
+
+.PHONY: all install uninstall _get_version push release undo_release
