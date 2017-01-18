@@ -1,0 +1,12 @@
+Source: libreoffice-style-papirus
+Section: universe/editors
+Priority: optional
+Maintainer: Sergei Eremenko <finalitik@gmail.com>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.8
+Homepage: https://github.com/PapirusDevelopmentTeam/papirus-libreoffice-theme
+
+Package: libreoffice-style-papirus
+Architecture: all
+Depends: libreoffice-common, ${misc:Depends}
+Description: Papirus symbol style for LibreOffice
