@@ -1,4 +1,4 @@
-all: install
+all:
 
 install:
 	mkdir -p $(DESTDIR)/usr/share/libreoffice/share/config
