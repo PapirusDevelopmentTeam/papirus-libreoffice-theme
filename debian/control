@@ -8,5 +8,10 @@ Homepage: https://github.com/PapirusDevelopmentTeam/papirus-libreoffice-theme
 
 Package: libreoffice-style-papirus
 Architecture: all
-Depends: libreoffice-common, ${misc:Depends}
+Multi-Arch: foreign
+Depends: ${misc:Depends}, libreoffice-common
 Description: Papirus symbol style for LibreOffice
+ This package contains the following symbol styles:
+  - Epapirus
+  - Papirus
+  - Papirus_dark
