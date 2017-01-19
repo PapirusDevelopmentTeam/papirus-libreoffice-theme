@@ -33,15 +33,19 @@ echo "=> Unpacking archive ..."
 tar -xzf "/tmp/$gh_repo.tar.gz" -C "$temp_dir"
 echo "=> Deleting old $gh_desc ..."
 sudo rm -rf "/usr/share/libreoffice/share/config/images_papirus.zip" \
+  "/usr/share/libreoffice/share/config/images_epapirus.zip" \
   "/usr/share/libreoffice/share/config/images_papirus_dark.zip"
 echo "=> Installing ..."
 sudo mkdir -p "/usr/share/libreoffice/share/config/"
 sudo cp --no-preserve=mode,ownership -r \
   "$temp_dir/$gh_repo-master/images_papirus.zip" \
+  "$temp_dir/$gh_repo-master/images_epapirus.zip" \
   "$temp_dir/$gh_repo-master/images_papirus_dark.zip" \
   "/usr/share/libreoffice/share/config/"
 sudo ln -s /usr/share/libreoffice/share/config/images_papirus.zip \
   /usr/lib/libreoffice/share/config/images_papirus.zip
+sudo ln -s /usr/share/libreoffice/share/config/images_epapirus.zip \
+  /usr/lib/libreoffice/share/config/images_epapirus.zip
 sudo ln -s /usr/share/libreoffice/share/config/images_papirus_dark.zip \
   /usr/lib/libreoffice/share/config/images_papirus_dark.zip
 echo "=> Clearing cache ..."

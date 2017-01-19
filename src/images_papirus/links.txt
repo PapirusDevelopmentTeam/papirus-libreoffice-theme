@@ -1466,6 +1466,7 @@ cmd/lc_macrorecorder.png
 cmd/lc_dbtabledelete.png
 cmd/sc_numberformatdecdecimals.png
 cmd/sc_formatcolumns.png
+cmd/graphicfiltermosaic.png
 cmd/sc_togglebreakpoint.png
 cmd/sc_zoompage.png
 cmd/sc_objectbackone.png

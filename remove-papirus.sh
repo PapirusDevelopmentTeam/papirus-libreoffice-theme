@@ -26,7 +26,9 @@ EOF
 
 echo "=> Removing $gh_desc ..."
 sudo rm -f /usr/share/libreoffice/share/config/images_papirus.zip \
+  /usr/share/libreoffice/share/config/images_epapirus.zip \
   /usr/share/libreoffice/share/config/images_papirus_dark.zip \
   /usr/lib/libreoffice/share/config/images_papirus.zip \
+  /usr/lib/libreoffice/share/config/images_epapirus.zip \
   /usr/lib/libreoffice/share/config/images_papirus_dark.zip
 echo "=> Done!"
