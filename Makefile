@@ -8,11 +8,11 @@ install:
 		images_papirus_dark.zip \
 		$(DESTDIR)/usr/share/libreoffice/share/config
 	mkdir -p $(DESTDIR)/usr/lib/libreoffice/share/config
-	ln -s ../../../../share/libreoffice/share/config/images_papirus.zip \
+	ln -sf ../../../../share/libreoffice/share/config/images_papirus.zip \
 		$(DESTDIR)/usr/lib/libreoffice/share/config/images_papirus.zip
-	ln -s ../../../../share/libreoffice/share/config/images_epapirus.zip \
+	ln -sf ../../../../share/libreoffice/share/config/images_epapirus.zip \
 		$(DESTDIR)/usr/lib/libreoffice/share/config/images_epapirus.zip
-	ln -s ../../../../share/libreoffice/share/config/images_papirus_dark.zip \
+	ln -sf ../../../../share/libreoffice/share/config/images_papirus_dark.zip \
 		$(DESTDIR)/usr/lib/libreoffice/share/config/images_papirus_dark.zip
 
 uninstall:

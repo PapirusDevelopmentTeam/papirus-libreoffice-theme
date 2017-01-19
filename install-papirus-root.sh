@@ -42,11 +42,11 @@ sudo cp --no-preserve=mode,ownership -r \
   "$temp_dir/$gh_repo-master/images_epapirus.zip" \
   "$temp_dir/$gh_repo-master/images_papirus_dark.zip" \
   "/usr/share/libreoffice/share/config/"
-sudo ln -s /usr/share/libreoffice/share/config/images_papirus.zip \
+sudo ln -sf /usr/share/libreoffice/share/config/images_papirus.zip \
   /usr/lib/libreoffice/share/config/images_papirus.zip
-sudo ln -s /usr/share/libreoffice/share/config/images_epapirus.zip \
+sudo ln -sf /usr/share/libreoffice/share/config/images_epapirus.zip \
   /usr/lib/libreoffice/share/config/images_epapirus.zip
-sudo ln -s /usr/share/libreoffice/share/config/images_papirus_dark.zip \
+sudo ln -sf /usr/share/libreoffice/share/config/images_papirus_dark.zip \
   /usr/lib/libreoffice/share/config/images_papirus_dark.zip
 echo "=> Clearing cache ..."
 rm -rf "/tmp/$gh_repo.tar.gz" "$temp_dir"
