@@ -42,13 +42,23 @@ sudo cp --no-preserve=mode,ownership -r \
   "$temp_dir/$gh_repo-master/images_epapirus.zip" \
   "$temp_dir/$gh_repo-master/images_papirus_dark.zip" \
   "/usr/share/libreoffice/share/config/"
-sudo mkdir -p "/usr/lib/libreoffice/share/config/"
-sudo ln -sf /usr/share/libreoffice/share/config/images_papirus.zip \
-  /usr/lib/libreoffice/share/config/images_papirus.zip
-sudo ln -sf /usr/share/libreoffice/share/config/images_epapirus.zip \
-  /usr/lib/libreoffice/share/config/images_epapirus.zip
-sudo ln -sf /usr/share/libreoffice/share/config/images_papirus_dark.zip \
-  /usr/lib/libreoffice/share/config/images_papirus_dark.zip
+if [ -d "/usr/lib64/libreoffice/share/config" ]; then
+  sudo ln -sf /usr/share/libreoffice/share/config/images_papirus.zip \
+    /usr/lib64/libreoffice/share/config/images_papirus.zip
+  sudo ln -sf /usr/share/libreoffice/share/config/images_epapirus.zip \
+    /usr/lib64/libreoffice/share/config/images_epapirus.zip
+  sudo ln -sf /usr/share/libreoffice/share/config/images_papirus_dark.zip \
+    /usr/lib64/libreoffice/share/config/images_papirus_dark.zip
+elif [ -d "/usr/lib/libreoffice/share/config" ]; then
+  sudo ln -sf /usr/share/libreoffice/share/config/images_papirus.zip \
+    /usr/lib/libreoffice/share/config/images_papirus.zip
+  sudo ln -sf /usr/share/libreoffice/share/config/images_epapirus.zip \
+    /usr/lib/libreoffice/share/config/images_epapirus.zip
+  sudo ln -sf /usr/share/libreoffice/share/config/images_papirus_dark.zip \
+    /usr/lib/libreoffice/share/config/images_papirus_dark.zip
+else
+  true
+fi
 echo "=> Clearing cache ..."
 rm -rf "/tmp/$gh_repo.tar.gz" "$temp_dir"
 echo "=> Done!"
