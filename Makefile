@@ -12,9 +12,6 @@ uninstall:
 	-rm -f $(DESTDIR)/usr/share/libreoffice/share/config/images_papirus.zip
 	-rm -f $(DESTDIR)/usr/share/libreoffice/share/config/images_epapirus.zip
 	-rm -f $(DESTDIR)/usr/share/libreoffice/share/config/images_papirus_dark.zip
-	-rm -f $(DESTDIR)/usr/lib/libreoffice/share/config/images_papirus.zip
-	-rm -f $(DESTDIR)/usr/lib/libreoffice/share/config/images_epapirus.zip
-	-rm -f $(DESTDIR)/usr/lib/libreoffice/share/config/images_papirus_dark.zip
 
 _get_version:
 	$(eval VERSION := $(shell git show -s --format=%cd --date=format:%Y%m%d HEAD))
