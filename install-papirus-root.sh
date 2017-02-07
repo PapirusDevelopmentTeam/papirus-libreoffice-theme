@@ -42,6 +42,7 @@ sudo cp --no-preserve=mode,ownership -r \
   "$temp_dir/$gh_repo-master/images_epapirus.zip" \
   "$temp_dir/$gh_repo-master/images_papirus_dark.zip" \
   "/usr/share/libreoffice/share/config/"
+sudo mkdir -p "/usr/lib/libreoffice/share/config/"
 sudo ln -sf /usr/share/libreoffice/share/config/images_papirus.zip \
   /usr/lib/libreoffice/share/config/images_papirus.zip
 sudo ln -sf /usr/share/libreoffice/share/config/images_epapirus.zip \
