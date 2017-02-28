@@ -2,26 +2,42 @@
   <img src="https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-libreoffice-theme/master/preview.png" alt="preview"/>
 </p>
 
-# Install / Update
+Papirus theme for LibreOffice is available in three variants:
+
+ - ePapirus
+ - Papirus
+ - Papirus Dark
+
+**NOTE:** Go to _Tools_ → _Options_ → _LibreOffice_ → _View_ to choose the theme.
+
+## Installation
+
+### Ubuntu and derivatives
+
+You can install libreoffice-style-papirus from our official [PPA](https://launchpad.net/~papirus/+archive/ubuntu/papirus):
+
+```
+sudo add-apt-repository ppa:papirus/papirus
+sudo apt-get update
+sudo apt-get install libreoffice-style-papirus
+```
+
+or download .deb packages from [here](https://launchpad.net/~papirus/+archive/ubuntu/papirus/+packages?field.name_filter=papirus-icon-theme).
+
+### Papirus Installer
+
+Use the script to install the latest version directly from this repo (independently on your distro):
+
 ```
 wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-libreoffice-theme/master/install-papirus-root.sh | sh
 ```
-**Depends:**
-- wget
-- tar
-- libreoffice
 
-# Remove
+#### Remove
 ```
 wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-libreoffice-theme/master/remove-papirus.sh | sh
 ```
 
-#Official packages
-| **Distro** | **Maintainer**  | **Package** |
-|:-----------|:----------------|:------------|
-| Ubuntu     | Sergei Eremenko | [libreoffice-style-papirus](https://launchpad.net/~papirus/+archive/ubuntu/papirus) (PPA) |
-
-# Unofficial packages
+### Unofficial packages
 Packages in this section are not part of the official repositories. If you have a trouble or a question please contact with package maintainer.
 
 | **Distro** | **Maintainer**    | **Package** |
