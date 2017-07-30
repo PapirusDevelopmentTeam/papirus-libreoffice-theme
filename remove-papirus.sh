@@ -25,13 +25,14 @@ cat <<- EOF
 EOF
 
 echo "=> Removing $gh_desc ..."
-sudo rm -f "/usr/share/libreoffice/share/config/images_papirus.zip"
-sudo rm -f "/usr/share/libreoffice/share/config/images_epapirus.zip"
-sudo rm -f "/usr/share/libreoffice/share/config/images_papirus_dark.zip"
-sudo rm -f "/usr/lib/libreoffice/share/config/images_papirus.zip"
-sudo rm -f "/usr/lib/libreoffice/share/config/images_epapirus.zip"
-sudo rm -f "/usr/lib/libreoffice/share/config/images_papirus_dark.zip"
-sudo rm -f "/usr/lib64/libreoffice/share/config/images_papirus.zip"
-sudo rm -f "/usr/lib64/libreoffice/share/config/images_epapirus.zip"
-sudo rm -f "/usr/lib64/libreoffice/share/config/images_papirus_dark.zip"
+for dir in \
+  /usr/share/libreoffice/share/config \
+  /usr/lib/libreoffice/share/config \
+  /usr/lib64/libreoffice/share/config \
+  /opt/libreoffice*/share/config; do
+  [ -d "$dir" ] || continue
+  sudo rm -f "$dir/images_papirus.zip"
+  sudo rm -f "$dir/images_epapirus.zip"
+  sudo rm -f "$dir/images_papirus_dark.zip"
+done
 echo "=> Done!"
