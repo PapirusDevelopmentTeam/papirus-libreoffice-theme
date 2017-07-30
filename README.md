@@ -24,6 +24,8 @@ sudo apt-get install libreoffice-style-papirus
 
 or download .deb packages from [here](https://launchpad.net/~papirus/+archive/ubuntu/papirus/+packages?field.name_filter=papirus-icon-theme).
 
+**NOTE:** The deb package doesn't support [official fresh builds](https://www.libreoffice.org/download/). Use Papirus Installer for these.
+
 ### Papirus Installer
 
 Use the script to install the latest version directly from this repo (independently on your distro):
