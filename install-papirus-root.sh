@@ -24,7 +24,7 @@ cat <<- EOF
 
 EOF
 
-temp_dir=$(mktemp -d)
+temp_dir="$(mktemp -d)"
 
 echo "=> Getting the latest version from GitHub ..."
 wget -O "/tmp/$gh_repo.tar.gz" \
@@ -37,7 +37,7 @@ sudo rm -f "/usr/share/libreoffice/share/config/images_papirus.zip"
 sudo rm -f "/usr/share/libreoffice/share/config/images_papirus_dark.zip"
 echo "=> Installing ..."
 sudo mkdir -p "/usr/share/libreoffice/share/config"
-sudo cp --no-preserve=mode,ownership -r \
+sudo cp -R \
   "$temp_dir/$gh_repo-master/images_epapirus.zip" \
   "$temp_dir/$gh_repo-master/images_papirus.zip" \
   "$temp_dir/$gh_repo-master/images_papirus_dark.zip" \
@@ -45,6 +45,7 @@ sudo cp --no-preserve=mode,ownership -r \
 for dir in \
   /usr/lib64/libreoffice/share/config \
   /usr/lib/libreoffice/share/config \
+  /usr/local/lib/libreoffice/share/config \
   /opt/libreoffice*/share/config; do
   [ -d "$dir" ] || continue
   sudo ln -sf "/usr/share/libreoffice/share/config/images_epapirus.zip" "$dir"

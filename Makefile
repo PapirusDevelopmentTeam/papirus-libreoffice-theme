@@ -1,13 +1,20 @@
-PREFIX ?= /usr/share
+# Some known prefixes:
+#  - /usr/lib64      # a few 64-bit distros
+#  - /usr/local/lib  # BSD systems
+PREFIX ?= /usr/lib
 NAME ?= libreoffice
 
 all:
 
 install:
-	install -dpm 755 $(DESTDIR)$(PREFIX)/libreoffice/share/config
-	install -Dpm 644 images_papirus.zip $(DESTDIR)$(PREFIX)/$(NAME)/share/config/images_papirus.zip
-	install -Dpm 644 images_epapirus.zip $(DESTDIR)$(PREFIX)/$(NAME)/share/config/images_epapirus.zip
-	install -Dpm 644 images_papirus_dark.zip $(DESTDIR)$(PREFIX)/$(NAME)/share/config/images_papirus_dark.zip
+	[ -d $(DESTDIR)$(PREFIX)/libreoffice/share/config ] \
+		|| mkdir -p $(DESTDIR)$(PREFIX)/libreoffice/share/config
+	install -m 644 images_papirus.zip \
+		$(DESTDIR)$(PREFIX)/$(NAME)/share/config/images_papirus.zip
+	install -m 644 images_epapirus.zip \
+		$(DESTDIR)$(PREFIX)/$(NAME)/share/config/images_epapirus.zip
+	install -m 644 images_papirus_dark.zip \
+		$(DESTDIR)$(PREFIX)/$(NAME)/share/config/images_papirus_dark.zip
 
 uninstall:
 	-rm -f $(DESTDIR)$(PREFIX)/$(NAME)/share/config/images_papirus.zip
