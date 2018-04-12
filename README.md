@@ -40,13 +40,13 @@ wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-libre
 wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-libreoffice-theme/master/remove-papirus.sh | sh
 ```
 
-### Unofficial packages
+### Third-party packages
 
 Packages in this section are not part of the official repositories. If you have a trouble or a question please contact with package maintainer.
 
 | **Distro** | **Maintainer**    | **Package** |
 |:-----------|:------------------|:------------|
-| Arch Linux | Icaro Perseo      | [papirus-libreoffice-theme](https://aur.archlinux.org/packages/papirus-libreoffice-theme/) <sup>AUR</sup> |
+| Arch Linux | Icaro Perseo      | `yaourt -S papirus-libreoffice-theme` <sup>AUR [[link](https://aur.archlinux.org/packages/papirus-libreoffice-theme/)]</sup> |
 | Fedora     | Dirk Davidis      | [libreoffice-style-papirus](https://copr.fedorainfracloud.org/coprs/dirkdavidis/papirus-libreoffice-theme/) <sup>copr</sup> |
 | Manjaro    | Nikola Yanev      | [papirus-libreoffice-theme](http://download.tuxfamily.org/gericom/README.html) |
 | openSUSE   | Konstantin Voinov | [libreoffice-icon-theme-papirus](https://software.opensuse.org/download.html?project=home:kill_it&package=libreoffice-icon-theme-papirus) <sup>OBS [[link](https://build.opensuse.org/package/show/home:kill_it/libreoffice-icon-theme-papirus)]</sub> |
