@@ -1,3 +1,8 @@
+**This project is unmaintained. LibreOffice 5.3 is the last supported version.**
+
+- - -
+
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-libreoffice-theme/master/preview.png" alt="preview"/>
 </p>
